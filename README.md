@@ -1,84 +1,51 @@
-x64dbg is a powerful, open-source debugger designed for reverse engineering and analyzing Windows applications. Its advanced features, intuitive interface, and active community support make it a popular choice among reverse engineers, security researchers, and developers. Whether you're debugging malware, analyzing binaries, or developing software, x64dbg provides the tools you need for efficient and precise debugging.
+# x64dbg
 
-What is x64dbg?
+<img width="100" src="https://github.com/x64dbg/x64dbg/raw/development/src/bug_black.png"/>
 
-x64dbg is a 32-bit and 64-bit debugger for Windows, built to assist in analyzing and modifying executables. With its focus on usability and extensibility, it caters to beginners and experienced reverse engineers alike. As an open-source project, it is continuously evolving, benefiting from contributions by developers and users worldwide.
+[![Build status](https://ci.appveyor.com/api/projects/status/h1j489qa1mx67e0h?svg=true)](https://ci.appveyor.com/project/mrexodia/x64dbg) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](https://translate.x64dbg.com) [![Download x64dbg](https://img.shields.io/sourceforge/dm/x64dbg.svg)](https://sourceforge.net/projects/x64dbg/files/latest/download)
 
-Key Features
+[![Discord](https://img.shields.io/badge/chat-on%20Discord-green.svg)](https://invite.gg/x64dbg) [![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](https://telegram.me/x64dbg) [![Gitter](https://img.shields.io/badge/chat-on%20Gitter-lightseagreen.svg)](https://gitter.im/x64dbg/x64dbg) [![Matrix](https://img.shields.io/badge/chat-on%20Matrix-yellowgreen.svg)](https://riot.im/app/#/room/#x64dbg:matrix.org)
 
-1. **Support for 32-bit and 64-bit Debugging**  
-   x64dbg supports both 32-bit (x86) and 64-bit (x64) binaries, making it suitable for debugging applications on modern Windows systems.
+An open-source binary debugger for Windows, aimed at malware analysis and reverse engineering of executables you do not have the source code for. There are many features available and a comprehensive [plugin system](https://plugins.x64dbg.com) to add your own. You can find more information on the [blog](https://x64dbg.com/blog)!
 
-2. **User-Friendly Interface**  
-   The debugger features an intuitive graphical interface, including disassembly views, stack visualization, and memory inspection. This allows users to navigate complex binaries with ease.
+## Screenshots
 
-3. **Scriptable Debugging**  
-   x64dbg includes scripting capabilities using its own script language (x64dbgScript). Users can automate repetitive tasks, extend functionality, and create custom workflows.
+![main interface (light)](.github/screenshots/cpu-light.png)
 
-4. **Dynamic Analysis Tools**  
-   With features like breakpoints, memory inspection, and register modification, x64dbg enables dynamic analysis to understand how software behaves at runtime.
+![main interface (dark)](.github/screenshots/cpu-dark.png)
 
-5. **Integrated Disassembler**  
-   The built-in disassembler provides detailed assembly code views, helping users analyze program logic and reverse engineer binaries effectively.
+| ![graph](.github/screenshots/graph-light.png) | ![memory map](.github/screenshots/memory-map-light.png) |
+| :--: | :--: |
 
-6. **Plugin Support**  
-   x64dbg supports plugins, allowing users to add new features or integrate with external tools. The active plugin ecosystem makes it highly customizable.
+## Installation & Usage
 
-7. **Debugger-Specific Tools**  
-   x64dbg includes advanced features like pattern scanning, structured exception handling (SEH) chain analysis, and execution flow tracing for in-depth debugging.
+1. Download a snapshot from [GitHub](https://github.com/x64dbg-debugger/x64dbg/releases/tag/snapshot), and extract it in a location your user has write access to.
+2. _Optionally_ use `x96dbg.exe` to register a shell extension and add shortcuts to your desktop.
+3. You can now run `x32\x32dbg.exe` if you want to debug a 32-bit executable or `x64\x64dbg.exe` to debug a 64-bit executable! If you are unsure you can always run `x96dbg.exe` and choose your architecture there.
 
-8. **Memory Mapping and Patching**  
-   Users can view and modify memory, making it easy to patch binaries, analyze data structures, or bypass security mechanisms.
+You can also [compile](https://github.com/x64dbg/x64dbg/wiki/Compiling-the-whole-project) x64dbg yourself with a few easy steps!
 
-9. **Compatibility with PDB Files**  
-   x64dbg can load and interpret program database (PDB) files, providing symbol information for debugging applications with source-level insights.
+## Sponsors
 
-10. **Community-Driven Development**  
-    As an open-source project, x64dbg benefits from a passionate community that contributes plugins, documentation, and improvements.
+[![](.github/sponsors/malcore.png)](https://sponsors.x64dbg.com/malcore)
 
-How Does x64dbg Work?
+<br>
 
-x64dbg operates by loading an executable into a controlled debugging environment. Users can set breakpoints, step through code, analyze assembly instructions, and inspect memory to gain a deeper understanding of the program's behavior. The debugger's tools help uncover vulnerabilities, identify hidden functionality, and modify program execution.
+[![](.github/sponsors/telekom.svg)](https://sponsors.x64dbg.com/telekom)
 
-The scripting language and plugin support further extend x64dbg's capabilities, enabling automation and integration with other reverse engineering tools. By combining static and dynamic analysis techniques, x64dbg empowers users to tackle complex debugging tasks efficiently.
+## Contributing
 
-Use Cases
+This is a community effort and we accept pull requests! See the [CONTRIBUTING](.github/CONTRIBUTING.md) document for more information. If you have any questions you can always [contact us](https://x64dbg.com/#contact) or open an [issue](https://github.com/x64dbg/x64dbg/issues). You can take a look at the [good first issues](https://easy.x64dbg.com/) to get started.
 
-1. **Reverse Engineering**  
-   x64dbg is widely used for reverse engineering applications, such as analyzing proprietary software, uncovering algorithms, and understanding obfuscated code.
+## Credits
 
-2. **Malware Analysis**  
-   Security researchers rely on x64dbg to analyze malicious binaries, dissect payloads, and identify exploits used by malware.
+- Debugger core by [TitanEngine Community Edition](https://github.com/x64dbg/TitanEngine)
+- Disassembly powered by [Zydis](https://zydis.re)
+- Assembly powered by [XEDParse](https://github.com/x64dbg/XEDParse) and [asmjit](https://github.com/asmjit)
+- Import reconstruction powered by [Scylla](https://github.com/NtQuery/Scylla)
+- JSON powered by [Jansson](https://www.digip.org/jansson)
+- Database compression powered by [lz4](https://bitbucket.org/mrexodia/lz4)
+- Bug icon by [VisualPharm](https://www.visualpharm.com)
+- Interface icons by [Fugue](https://p.yusukekamiyamane.com)
+- Website by [tr4ceflow](https://tr4ceflow.com)
 
-3. **Debugging Software**  
-   Developers use x64dbg to debug their own applications, identify runtime errors, and optimize performance.
-
-4. **Bypassing Protections**  
-   Reverse engineers utilize x64dbg to bypass software protections, such as anti-debugging mechanisms or encryption schemes.
-
-5. **Educational Purposes**  
-   x64dbg is an excellent tool for learning assembly language, debugging techniques, and reverse engineering fundamentals.
-
-Advantages Over Other Debuggers
-
-1. **Open Source**: x64dbg is free to use, modify, and distribute, with source code available on GitHub.  
-2. **Active Community**: A strong user base and developer community ensure regular updates, bug fixes, and plugin development.  
-3. **Ease of Use**: Its graphical interface and intuitive design make it accessible to users of all skill levels.  
-4. **Extensibility**: Support for scripting and plugins allows users to customize x64dbg for their specific needs.  
-5. **Modern Features**: x64dbg integrates features like dynamic analysis, memory patching, and exception handling that are essential for modern reverse engineering tasks.
-
-Getting Started with x64dbg
-
-1. **Download and Install**: Obtain x64dbg from its official website or GitHub repository. The installation process is straightforward and supports portable setups.  
-2. **Load a Binary**: Open the executable you wish to analyze. x64dbg provides a detailed overview of the binary's sections, imports, and exports.  
-3. **Set Breakpoints**: Use hardware or software breakpoints to pause execution at specific instructions or memory addresses.  
-4. **Analyze Code**: Step through the disassembled code, inspect memory regions, and monitor register changes to understand program behavior.  
-5. **Extend Functionality**: Leverage scripts or install plugins to enhance debugging capabilities and automate workflows.
-
-Why Choose x64dbg?
-
-x64dbg combines advanced debugging tools with an accessible interface, making it an ideal choice for professionals and enthusiasts alike. Its versatility, extensibility, and community-driven development ensure that it remains a reliable and up-to-date debugging solution. Whether you're analyzing malware, reverse engineering software, or debugging your own code, x64dbg provides the precision and flexibility you need.
-
-Conclusion
-
-x64dbg is more than just a debugger—it's a comprehensive platform for reverse engineering and binary analysis. Its robust features, open-source nature, and active community support make it a standout tool in the world of debugging. From beginners learning assembly language to experts tackling complex malware, x64dbg empowers users to explore and manipulate software at a low level with confidence and efficiency.
